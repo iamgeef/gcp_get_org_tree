@@ -38,7 +38,7 @@ projects() {
   # (createTime:sort=1,name,projectNumber,projectId:label=ProjectID,parent.id:label=Parent)"
   FORMAT_PRJ="table[box] \
   (name,projectNumber,projectId:label=ProjectID)"
-  FORMAT_PRJ_CSV="csv[no-heading](name,projectNumber,projectId:label=ProjectID)"
+  FORMAT_PRJ_CSV="csv[no-heading](parent.id,name,projectNumber,projectId:label=ProjectID)"
 
   PROJECT=$(gcloud projects list \
     --filter parent.id:${FOLDER} \
